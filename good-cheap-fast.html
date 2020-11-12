@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Good - cheap-fast</title>
+</head>
+<body>
+<div style="position: relative; left: 500px">
+    <button id="id1" type="button" style="background-color: red; position: relative ; left: 0px" onclick="movest(this)" >
+    0</button> <p>Good</p><br>
+<button id="id2" type="button" style="background-color: chartreuse; position: relative ; left: 0px" onclick="movest(this)">
+    0</button>  <p>Cheap</p><br>
+<button id="id3" type="button" style="background-color: blue; position: relative ; left: 0px" onclick="movest(this)">
+    0</button> <p>Fast</p>
+</div>    
+
+</body>
+</html>
+<script>
+    function movest(e) {
+        let idE = e.getAttribute("id")
+        let x = document.getElementById("id1")
+        let y = document.getElementById("id2")
+        let z = document.getElementById("id3")
+        let a = parseInt(x.style.left)
+        let b = parseInt(y.style.left)
+        let c = parseInt(z.style.left)
+        let t = a + b + c
+        if (idE == "id1") {
+            if(a < 50){
+            if (t < 100) {
+                x.style.left = a + 50 + 'px';
+            } else {
+                x.style.left = a + 50 + 'px';
+                y.style.left = b - 50 + 'px';
+            }}
+            else {
+                x.style.left = a - 50 + 'px';
+            }
+        } else if (idE == "id2") {
+            if(b < 50){
+            if (t < 100) {
+                y.style.left = b + 50 + 'px'
+            } else {
+                y.style.left = b + 50 + 'px';
+                z.style.left = c - 50 + 'px';
+            }}
+            else {
+                y.style.left = b - 50 + 'px'
+            }
+        } else if (idE == "id3") {
+            if(c < 50){
+            if (t < 100) {
+                z.style.left = c + 50 + 'px';}
+            else {
+                z.style.left = c + 50 + 'px';
+                x.style.left = a - 50 + 'px';
+
+            }}else {
+                z.style.left = c - 50 + 'px';
+            }
+        }
+    }
+
+
+</script>
